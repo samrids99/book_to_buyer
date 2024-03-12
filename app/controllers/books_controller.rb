@@ -3,9 +3,6 @@ class BooksController < ApplicationController
   before_action :authorize_user!, only: :destroy
 
   def index
-<<<<<<< HEAD
-    @books = Book.all
-=======
     if params[:search]
       @books = Book.where("title LIKE ?", "%#{params[:search]}%")
     else
@@ -28,6 +25,5 @@ class BooksController < ApplicationController
     unless current_user == @book.user
       redirect_to books_path, alert: "You are not authorized to delete this book."
     end
->>>>>>> user_model
   end
 end
