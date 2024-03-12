@@ -1,0 +1,51 @@
+<style>
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+</style>
+
+<h1>Listing Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Description</th>
+      <th>User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.genre %></td>
+        <td><%= book.description %></td>
+        <td><%= book.user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
