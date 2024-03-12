@@ -1,0 +1,7 @@
+
+<td style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><%= @book.author %></td>
+<td style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><%= @book.genre %></td>
+<td style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><%= @book.description %></td>
+<td style="padding: 8px 12px; border-bottom: 1px solid #ddd;"><%= @book.user.email %></td>
+
+<%= link_to "Back to Books", books_path, style: "color: blue; text-decoration: underline;" %>
