@@ -1,0 +1,12 @@
+<h1>New Book</h1>
+
+<%= simple_form_for @book do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :genre %>
+  <%= f.input :description, as: :text, label: 'Content' %>
+  <%= f.input :price %>
+  <%= f.input :cover_image, as: :file, label: 'Cover Image' %>
+
+  <%= f.submit %>
+<% end %>

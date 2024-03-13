@@ -1,0 +1,45 @@
+/* Style for the title */
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style for the card container */
+.card {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card-body {
+    padding: 20px;
+
+    p {
+      margin: 10px 0;
+    }
+  }
+}
+
+/* Style for the link to go back */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0056b3;
+  }
+}
