@@ -1,45 +1,89 @@
-/* Style for the title */
+body {
+  background-color: #ffefd3;
+  text-align: center;
+}
+
 h1 {
   font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 24px;
 }
 
-/* Style for the card container */
 .card {
-  width: 80%;
+  width: 500px;
   margin: 0 auto;
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: #adb6c4;
+  border: 1px solid white;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .card-body {
-    padding: 20px;
-
-    p {
-      margin: 10px 0;
-    }
-  }
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Style for the link to go back */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background-color: #294c60;
+  color: white;
+}
+
+.card img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 10px;
+  display: block;
+  margin: 24px auto;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card-body p {
+  margin-bottom: 10px;
+}
+
+.card-body strong {
+  font-weight: bold;
+}
+
+.card-body img {
+  border-radius: 8px 8px 0 0;
+}
+
 .back-link {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin-top: 20px;
   color: #007bff;
   text-decoration: none;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #0056b3;
-  }
 }
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #001b2e;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 32px;
+}
+
+a:hover {
+    background-color: #adb6c4;
+  }
