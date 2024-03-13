@@ -21,6 +21,7 @@ class BooksController < ApplicationController
       render :new
     end
   end
+
   def destroy
     if current_user == @book.user
       @book.destroy
@@ -29,10 +30,13 @@ class BooksController < ApplicationController
       redirect_to books_path, alert: "You are not authorized to delete this book."
     end
   end
+
   private
+    
   def set_book
     @book = Book.find(params[:id])
   end
+
   def book_params
     params.require(:book).permit(:title, :genre, :author, :cover_image, :description)
   end
