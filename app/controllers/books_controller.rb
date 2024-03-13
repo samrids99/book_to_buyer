@@ -9,7 +9,6 @@ class BooksController < ApplicationController
     end
   end
   def show
-    @books = Book.all
   end
   def new
     @book = current_user.books.new
@@ -33,7 +32,7 @@ class BooksController < ApplicationController
   end
 
   private
-
+    
   def set_book
     @book = Book.find(params[:id])
   end
