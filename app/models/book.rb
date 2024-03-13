@@ -5,4 +5,5 @@ class Book < ApplicationRecord
   validates :genre, presence: true
   validates :author, presence: true
   validates :description, presence: true
+  validates :price, presence: true
 end

@@ -1,13 +1,10 @@
-class BooksController < ApplicationController
-  def index
-    @books = Book.all
-  end
-end
+
 class BooksController < ApplicationController
   before_action :set_book, only: [:show]
   before_action :authenticate_user!, only: [:create]
 
   def index
+    @books = Book.all
   end
 
   def show

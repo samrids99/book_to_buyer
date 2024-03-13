@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'book_show', media: 'all' %>
 <h1><%= @book.title %></h1>
 
 <div class="card">
@@ -7,7 +8,7 @@
     <p><strong>Author:</strong> <%= @book.author %></p>
     <p><strong>Genre:</strong> <%= @book.genre %></p>
     <p><strong>User:</strong> <%= @book.user.username %></p>
-    <p><strong>User:</strong> <%= @book.content %></p>
+    <p><strong>User:</strong> <%= @book.description %></p>
   </div>
 </div>
 
