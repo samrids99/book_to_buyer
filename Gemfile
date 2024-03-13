@@ -4,12 +4,10 @@ ruby "3.1.2"
 
 gem "devise"
 
-<<<<<<< HEAD
 gem 'httparty'
-=======
+
 gem 'faker', require: false
 
->>>>>>> 3805f4216d748d174fbccd754b59af85c4c33819
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
