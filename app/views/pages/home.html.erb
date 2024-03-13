@@ -1,20 +1,34 @@
 <body class="custom-background">
-<h1>Welcome to BookToBuyer</h1>
+  <%= image_tag('b2b logo.png', alt: 'BookToBuyer Logo', class: 'logo-img') %>
 
-<p>Explore the collection of books and find your next story.. </p>
+  <p class="under-logo">Explore the collection of books and find your next story.. </p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
-nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
-nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
-nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
+    nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
+    nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
+    nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!</p>
 
-<%= link_to 'View My Books', books_path, class: 'btn btn-primary' %>
-
-<%= link_to 'All Books', books_path, class: 'btn btn-primary' %>
-
-  <h2>Available Books</h2>
+  <div class="buttons">
+    <%= link_to 'View My Books', books_path, class: 'btn btn-primary' %>
+    <%= link_to 'All Books', books_path, class: 'btn btn-primary' %>
+  </div>
 
   <h2>All Books</h2>
+
+  <h2>New Deals</h2>
+
+  <h2>Recommended Reads</h2>
+  <div class="book-covers-container">
+    <div class="book-covers">
+      <% @books.each do |book| %>
+        <% if book['volumeInfo']['imageLinks'] %>
+          <%= link_to book_path(book['id']), class: 'book-link' do %>
+            <%= image_tag(book['volumeInfo']['imageLinks']['thumbnail'], class: 'book-cover-image') %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </body>
