@@ -1,0 +1,17 @@
+<h1>New Book</h1>
+<%= simple_form_for @book do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :genre, collection: ['Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Romance', "Children's fiction"], prompt: 'Select Genre' %>
+  <%= f.input :description, as: :text, label: 'Content' %>
+  <%= f.input :price, input_html: { class: 'input-prepend' } do %>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <%= f.input_field :price, class: 'form-control' %>
+    </div>
+  <% end %>
+  <%= f.input :cover_image, as: :file, label: 'Cover Image' %>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to "Back to Books", books_path %>

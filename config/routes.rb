@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :books
+
   resources :bookings
+
 
   # Add a route for the home page
   get 'home', to: 'home#index', as: 'home'
@@ -16,5 +18,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :users
+  resources :books
 end

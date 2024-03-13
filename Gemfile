@@ -4,7 +4,12 @@ ruby "3.1.2"
 
 gem "devise"
 
+<<<<<<< HEAD
 gem 'httparty'
+=======
+gem 'faker', require: false
+
+>>>>>>> 3805f4216d748d174fbccd754b59af85c4c33819
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
@@ -41,6 +46,8 @@ gem "jbuilder"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
+
+gem "cloudinary"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
