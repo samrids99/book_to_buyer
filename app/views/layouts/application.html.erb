@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>BookToBuyer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -50,14 +51,7 @@
     }
   </style> %>
 </head>
-<body>
-  <% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>">
-    <%= value %>
-  </div>
-  <% end %>
-  <%= yield %>
-</body>
+
   <body>
     <%= render 'shared/navbar' %>
     <% flash.each do |key, value| %>
@@ -67,4 +61,5 @@
     <% end %>
     <%= yield %>
   </body>
+
 </html>
