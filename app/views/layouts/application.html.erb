@@ -9,47 +9,6 @@
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag 'book_show', media: 'all' %> <!-- Include your custom stylesheet here -->
-
-  <%# <style>
-    /* Your CSS styles */
-    /* Table styles */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    th, td {
-      padding: 8px 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-
-    th {
-      font-weight: bold;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    tr:hover {
-      background-color: #ddd;
-    }
-
-    /* Book title styles */
-    .book-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    /* Back to Books link styles */
-    .back-to-books-link {
-      color: blue;
-      text-decoration: underline;
-    }
-  </style> %>
 </head>
 <body>
   <% flash.each do |key, value| %>
