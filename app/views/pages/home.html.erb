@@ -20,5 +20,15 @@
   <h2>New Deals</h2>
 
   <h2>Recommended Reads</h2>
-
+  <div class="book-covers-container">
+    <div class="book-covers">
+      <% @books.each do |book| %>
+        <% if book['volumeInfo']['imageLinks'] %>
+          <%= link_to book_path(book['id']), class: 'book-link' do %>
+            <%= image_tag(book['volumeInfo']['imageLinks']['thumbnail'], class: 'book-cover-image') %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </body>
