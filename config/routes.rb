@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :users, only: [:new, :create] # Assuming you have user-related routes
-  resources :sessions, only: [:new, :create, :destroy] # Assuming you have session-related routes
+
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :books
   resources :bookings
