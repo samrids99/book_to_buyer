@@ -1,0 +1,84 @@
+
+<%= stylesheet_link_tag 'book_show', media: 'all' %>
+<h1><%= @book.title %></h1>
+
+<div class="card">
+  <%= cl_image_tag @book.cover_image.key, width: 400, height: 300, crop: :fill if @book.cover_image.attached? %>
+  <div class="card-body">
+    <p><strong>Title:</strong> <%= @book.title %></p>
+    <p><strong>Author:</strong> <%= @book.author %></p>
+    <p><strong>Genre:</strong> <%= @book.genre %></p>
+    <p><strong>User:</strong> <%= @book.user.username %></p>
+    <p><strong>User:</strong> <%= @book.description %></p>
+  </div>
+</div>
+
+<%= link_to 'Back', books_path %>
+
+<style>
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  /* Book title styles */
+  .book-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  /* Back to Books link styles */
+  .back-to-books-link {
+    color: blue;
+    text-decoration: underline;
+  }
+</style>
+
+<div class="book-container">
+  <div class="book">
+    <h2 class="book-title"><%= @book.title %></h2>
+    <table>
+      <tbody>s
+        <tr>
+          <td>Author:</td>
+          <td><%= @book.author %></td>
+        </tr>
+        <tr>
+          <td>Genre:</td>
+          <td><%= @book.genre %></td>
+        </tr>
+        <tr>
+          <td>Description:</td>
+          <td><%= @book.description %></td>
+        </tr>
+        <tr>
+          <td>Uploaded by:</td>
+          <td><%= @book.user.email %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to "Back to Books", books_path, class: "back-to-books-link" %>
+  </div>
+</div>
+
