@@ -22,13 +22,17 @@ User.create!(user_data)
 
 # Create seed data for books
 books_data = [
-  { user: User.first, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', genre: 'Classic', description: 'A novel about the American Dream.' },
-  { user: User.first, title: 'To Kill a Mockingbird', author: 'Harper Lee', genre: 'Fiction', description: 'A story of racial injustice and moral growth.' },
-  { user: User.first, title: '1984', author: 'George Orwell', genre: 'Dystopian', description: 'A dystopian novel exploring totalitarianism.' }
+  { user: User.first, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', genre: 'Classic', description: 'A novel about the American Dream.', price: "£9",},
+  { user: User.first, title: 'To Kill a Mockingbird', author: 'Harper Lee', genre: 'Fiction', description: 'A story of racial injustice and moral growth.', price: '9' },
+  { user: User.first, title: '1984', author: 'George Orwell', genre: 'Dystopian', description: 'A dystopian novel exploring totalitarianism.', price: '£10'}
 ]
 
-books_data.each do |book_data|
-  Book.create!(book_data)
+images = ["1984.jpg", "the_great_gatsby.jpg", "to_kill_a_mockinbird.jpg"]
+
+books_data.each_with_index do |book_data, i|
+  book = Book.create!(book_data)
+  file_path = Rails.root.join('app', 'assets', 'images', images[i])  # Replace 'book_image.jpg' with the actual image file name
+  book.cover_image.attach(io: File.open(file_path), filename: 'book_image.jpg')
 end
 
 puts 'Seed data for books created successfully!'

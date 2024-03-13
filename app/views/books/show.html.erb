@@ -1,4 +1,3 @@
-
 <%= stylesheet_link_tag 'book_show', media: 'all' %>
 <h1><%= @book.title %></h1>
 
@@ -8,6 +7,7 @@
     <p><strong>Title:</strong> <%= @book.title %></p>
     <p><strong>Author:</strong> <%= @book.author %></p>
     <p><strong>Genre:</strong> <%= @book.genre %></p>
+<<<<<<< HEAD
     <p><strong>Owner:</strong> <%= @book.user.username %></p>
     <p><strong>What's it about?:</strong> <%= @book.description %></p>
     <br>
@@ -16,3 +16,11 @@
 </div>
  <br>
 <%= link_to "Back to Books", books_path %>
+=======
+    <p><strong>User:</strong> <%= @book.user.username %></p>
+    <p><strong>Description:</strong> <%= @book.description %></p>
+  </div>
+</div>
+
+<%= link_to 'See', books_path %>
+>>>>>>> user_model
