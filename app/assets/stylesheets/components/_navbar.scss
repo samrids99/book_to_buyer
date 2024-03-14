@@ -19,25 +19,20 @@
 }
 
 .navbar .btn-outline-success:hover {
-  background-color: #161658;
+  background-color: #4d4d77;
   color: white;
+  border-color: #4d4d77; /* Set border color on hover */
 }
 
-.navbar .btn-outline-success.active {
+.navbar .btn-outline-success:focus,
+.navbar .btn-outline-success:active {
   background-color: #161658;
   color: white;
+  border-color: #161658; /* Set border color on click */
 }
 
 .navbar .form-control {
-  border-radius: 10px 0 0 10px;;
-}
-
-.navbar-nav .nav-link {
-  color: white;
-}
-
-.navbar-nav .nav-link:hover {
-  color: white;
+  border-radius: 10px 0 0 10px;
 }
 
 .custom-brand-img {
@@ -47,7 +42,9 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-  transition: 0.3s ease, opacity 0.3s ease;
+  color: white;
+  transition: opacity 0.3s ease;
+  font-size: 18px;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
