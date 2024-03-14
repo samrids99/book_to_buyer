@@ -1,6 +1,11 @@
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
 <h1>My Bookings</h1>
 
 <% if @bookings.any? %>
+  <div id="map" style="width: 60%; height: 250px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
   <table>
     <thead>
       <tr>
@@ -21,4 +26,4 @@
   <p>No bookings found.</p>
 <% end %>
 
-<%= link_to "Go get more books!", books_path, class: "btn btn-primary"%>
+<%= link_to "Go get more books!", books_path, class: "btn btn-primary" %>

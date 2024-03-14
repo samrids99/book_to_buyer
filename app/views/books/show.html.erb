@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'book_show', media: 'all' %>
-<h1><%= @book.title %></h1>
+<h1 class="show_h1"><%= @book.title %></h1>
 
 <div class="card">
   <%= cl_image_tag @book.cover_image.key, width: 400, height: 300, crop: :fill if @book.cover_image.attached? %>
@@ -14,39 +14,5 @@
   </div>
 </div>
  <br>
-<%= link_to "Back to Books", books_path %>
-<%= link_to "Get this Book!", "#", id: "showFormLink" %>
-
-<div id="bookingFormContainer" style="display: none;">
-  <%= simple_form_for Booking.new do |f| %>
-    <%= f.input :book_id, as: :hidden, input_html: { value: @book.id } %>
-    <%= f.input :date,
-              as: :string,
-              input_html: { data: { controller: "datepicker" } } %>
-
-    <p><strong>Price of the Book:</strong> $<%= @book.price %></p>
-
-    <p><strong>Book Owner:</strong> <%= @book.user.username %></p>
-
-    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-
-    <%= f.submit "Book Now", class: "btn btn-primary" %>
-  <% end %>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const showFormLink = document.getElementById('showFormLink');
-    const bookingFormContainer = document.getElementById('bookingFormContainer');
-
-    showFormLink.addEventListener('click', function(event) {
-      event.preventDefault();
-
-      if (bookingFormContainer.style.display === 'none') {
-        bookingFormContainer.style.display = 'block';
-      } else {
-        bookingFormContainer.style.display = 'none';
-      }
-    });
-  });
-</script>
+<%= link_to "Back to Books", books_path, class: "show_links"%>
+<%= link_to "Get this Book!", new_book_booking_path(@book), class: "show_links" %>
