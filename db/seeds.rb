@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Booking.destroy_all
 Book.destroy_all
 User.destroy_all
 
@@ -31,7 +32,7 @@ images = ["1984.jpg", "the_great_gatsby.jpg", "to_kill_a_mockinbird.jpg"]
 
 books_data.each_with_index do |book_data, i|
   book = Book.create!(book_data)
-  file_path = Rails.root.join('app', 'assets', 'images', images[i])  # Replace 'book_image.jpg' with the actual image file name
+  file_path = Rails.root.join('app', 'assets', 'images', images[i])
   book.cover_image.attach(io: File.open(file_path), filename: 'book_image.jpg')
 end
 
