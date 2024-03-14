@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :books
+  resources :books do
+    resources :bookings, only: [:new, :create]
+  end
 
-  resources :bookings
+  resources :bookings, only: [:index]
+
+
 
 
   # Add a route for the home page
