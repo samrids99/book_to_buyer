@@ -3,23 +3,24 @@
 
   <p class="under-logo">Explore the collection of books and find your next story.. </p>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
+  <p class ="description-hp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
     nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
     nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab temporibus rem nihil suscipit? Perspiciatis at,
     nam id similique quos tempore nulla alias placeat facilis nobis, impedit porro? Numquam, sapiente. Nulla!</p>
 
-  <div class="buttons">
+  <div class="hp-buttons">
     <%= link_to 'View My Books', books_path, class: 'btn btn-primary' %>
     <%= link_to 'All Books', books_path, class: 'btn btn-primary' %>
   </div>
 
-  <h2>All Books</h2>
+  <h2 class ="hp-title1">All Books</h2>
 
-  <h2>New Deals</h2>
+  <h2 class="hp-title2">New Deals</h2>
 
-  <h2>Recommended Reads</h2>
+  <h2 class="hp-title3">Recommended Reads</h2>
+
   <div class="book-covers-container">
     <div class="book-covers">
       <% @books.each do |book| %>

@@ -1,1 +1,79 @@
 // Specific CSS for your home-page
+.custom-background {
+  background-color: #f6f0dd;
+}
+
+.logo-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.under-logo{
+  font-size: 30px;
+  padding: 10px;
+}
+
+.description-hp {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hp-title1{
+  text-align: center;
+  padding: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 5px;
+}
+.hp-title2{
+  text-align: center;
+  padding: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 5px;
+}
+.hp-title3{
+  text-align: center;
+  padding: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 5px;
+}
+
+.hp-buttons{
+  text-align: center;
+}
+
+
+.btn.btn-primary {
+  justify-content: center;
+  background-color: rgb(52, 226, 189);
+  color: white;
+  border-radius: 15px;
+  border-color: rgb(52, 226, 189);
+  padding: 10px 20px;
+  margin-right: 30px;
+}
+
+
+.book-covers-container {
+  display: flex;
+  justify-content: center;
+}
+
+.book-covers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-link {
+  margin: 10px;
+}
+
+.book-cover-image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
