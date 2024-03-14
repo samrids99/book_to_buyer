@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Booking.destroy_all
 Book.destroy_all
 User.destroy_all
 
@@ -27,7 +28,7 @@ books_data = [
   { user: User.first, title: '1984', author: 'George Orwell', genre: 'Dystopian', description: 'A dystopian novel exploring totalitarianism.', price: '£10'}
 ]
 
-images = ["1984.jpg", "the_great_gatsby.jpg", "to_kill_a_mockinbird.jpg"]
+images = ["the_great_gatsby.jpg", "to_kill_a_mockinbird.jpg", "1984.jpg"]
 
 books_data.each_with_index do |book_data, i|
   book = Book.create!(book_data)

@@ -13,6 +13,8 @@
         <tr>
           <td><%= booking.book.title %></td>
           <td><%= booking.date.strftime("%B %d, %Y") %></td>
+          <td ><%= link_to 'accept', accept_path(booking)%></td>
+          <td><%= link_to 'decline', decline_path(booking) %></td>
         </tr>
       <% end %>
     </tbody>

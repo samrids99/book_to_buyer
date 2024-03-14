@@ -1,18 +1,22 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :destroy]
+
   def index
     if params[:search].present?
-      @books = Book.where("title LIKE ?", "%#{params[:search]}%")
+      @books = Book.search_by_title_and_author(params[:search])
     else
       @books = Book.all
     end
   end
+
   def show
   end
+
   def new
     @book = current_user.books.new
   end
+
   def create
     @book = current_user.books.new(book_params)
     if @book.save
@@ -32,7 +36,7 @@ class BooksController < ApplicationController
   end
 
   private
-    
+
   def set_book
     @book = Book.find(params[:id])
   end
