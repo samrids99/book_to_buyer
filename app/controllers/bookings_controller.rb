@@ -10,12 +10,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @book = Book.find(params[:book_id])
     @booking.user = current_user
-<<<<<<< HEAD
     @booking.status = 'pending'
 
-=======
     @booking.book = @book
->>>>>>> ac5e4b24a5b1c4454bc5a09e7e0f0d15180a2948
     if @booking.save
       redirect_to bookings_path, notice: 'Booking was successfully created.'
     else
