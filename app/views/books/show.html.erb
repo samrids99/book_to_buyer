@@ -2,9 +2,7 @@
 <h1 class="show_h1"><%= @book.title %></h1>
 
 <div class="card">
-<% if @book.cover_image.attached? %>
   <%= cl_image_tag @book.cover_image.key, width: 400, height: 300, crop: :fill if @book.cover_image.attached? %>
-  <% end %>
   <div class="card-body">
     <p class="show-p"><strong>Title:</strong> <%= @book.title %></p>
     <p class="show-p"><strong>Author:</strong> <%= @book.author %></p>
