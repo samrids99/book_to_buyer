@@ -6,7 +6,7 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :description, presence: true
   validates :price, presence: true
-
+  has_many :bookings
   include PgSearch::Model
 
   pg_search_scope :search_by_title_and_author,

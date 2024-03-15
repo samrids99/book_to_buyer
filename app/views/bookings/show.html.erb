@@ -1,0 +1,15 @@
+<tbody>
+      <% @booking %>
+        <tr>
+          <td><%= @booking.book.title %></td>
+          <td><%= @booking.date.strftime("%B %d, %Y") %></td>
+          <% if @booking.book.user == current_user %>
+            <td>
+              <%= link_to 'Accept', accept_path(@booking)%>
+              <%= link_to 'Decline', decline_path(@booking) %>
+            </td>
+            <% else  %>
+            <td>  <%= @booking.status %></td>
+          <% end %>
+        </tr>
+    </tbody>

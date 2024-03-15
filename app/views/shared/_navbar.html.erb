@@ -14,7 +14,12 @@
         <%= link_to 'My Bookings', bookings_path, class: 'nav-link' %>
       </li>
       <% if user_signed_in? %>
+<<<<<<< HEAD
          <%= link_to 'Logout', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %>
+=======
+        <li class="nav-item">
+          <%= link_to 'Logout', destroy_user_session_path, data: {turbo_method: :delete}, class: 'nav-link' %>
+>>>>>>> user_model
         </li>
       <% else %>
         <li class="nav-item">
@@ -25,9 +30,10 @@
         </li>
       <% end %>
     </ul>
+    </ul>
     <form class="form-inline my-2 my-lg-0">
       <div class="input-group">
-        <input class="form-control form-control-sm" type="search" placeholder="Search For A Book" aria-label="Search" style="width: 250px; padding: 0.25rem 0.5rem; font-size: 0.875rem;">
+        <input class="form-control form-control-sm" type="search" placeholder="Search on our website" aria-label="Search" style="width: 250px; padding: 0.25rem 0.5rem; font-size: 0.875rem;">
         <div class="input-group-append">
           <button class="btn btn-outline-success btn-sm" type="submit" style="padding: 0.3rem 0.8rem; border-color: #161658;">Search</button>
         </div>
