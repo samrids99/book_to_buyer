@@ -6,21 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <%= javascript_importmap_tags %>
+
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <%= stylesheet_link_tag 'book_show', media: 'all' %> <!-- Include your custom stylesheet here -->
 </head>
 
-<body>
-  <%= render 'shared/navbar' %>
-  <% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>">
-    <%= value %>
-  </div>
-  <% end %>
-  <%= yield %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
-</body>
+  <body>
+    <%= render 'shared/navbar' %>
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+    <% end %>
+    <%= yield %>
+  </body>
 
 </html>
