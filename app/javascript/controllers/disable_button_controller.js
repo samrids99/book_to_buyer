@@ -1,4 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
+export default class DisableButtonController {
+  // Controller code here
+}
 
 // Connects to data-controller="disable-button"
 // export default class extends Controller {

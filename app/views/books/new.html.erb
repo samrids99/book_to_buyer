@@ -1,17 +1,111 @@
-<h1>New Book</h1>
-<%= simple_form_for @book do |f| %>
-  <%= f.input :title %>
-  <%= f.input :author %>
-  <%= f.input :genre, collection: ['Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Romance', "Children's fiction"], prompt: 'Select Genre' %>
-  <%= f.input :description, as: :text, label: 'Content' %>
-  <%= f.input :price, input_html: { class: 'input-prepend' } do %>
-    <div class="input-group">
-      <span class="input-group-addon">$</span>
-      <%= f.input_field :price, class: 'form-control' %>
+<style>
+  .book-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .book-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .book-form .input-field {
+    margin-bottom: 30px;
+  }
+
+  .book-form label {
+    font-weight: bold;
+  }
+
+  .book-form .select-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .book-form textarea {
+    height: 100px;
+  }
+
+  .book-form .input-group {
+    margin-bottom: 20px;
+  }
+
+  .book-form .input-group-addon {
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .book-form .form-control {
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .book-form .btn-submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #284b63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .book-form .btn-submit:hover {
+    background-color: #d9d9d9;
+  }
+
+  .book-form .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .book-form .back-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="book-form">
+  <h1>New Book</h1>
+  <%= simple_form_for @book, html: { class: "new-book-form" } do |f| %>
+    <div class="input-field">
+      <%= f.label :title %>
+      <%= f.input_field :title, class: 'form-control' %>
     </div>
+    <div class="input-field">
+      <%= f.label :author %>
+      <%= f.input_field :author, class: 'form-control' %>
+    </div>
+    <div class="input-field select-wrapper">
+      <%= f.label :genre, 'Genre' %>
+      <%= f.select :genre, ['Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Romance', "Children's fiction"], { prompt: 'Select Genre' }, class: 'form-control' %>
+    </div>
+    <div class="input-field">
+      <%= f.label :description, 'Content' %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <div class="input-field">
+      <%= f.label :price %>
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <%= f.input_field :price, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="input-field">
+      <%= f.label :cover_image, 'Cover Image' %>
+      <%= f.file_field :cover_image, class: 'form-control' %>
+    </div>
+    <%= f.submit "Submit", class: 'btn-submit' %>
   <% end %>
-  <%= f.input :cover_image, as: :file, label: 'Cover Image' %>
-  <%= f.submit %>
-<% end %>
-<br>
-<%= link_to "Back to Books", books_path %>
+  <br>
+  <%= link_to "Back to Books", books_path, class: 'back-link' %>
+</div>
