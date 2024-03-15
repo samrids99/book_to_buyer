@@ -87,7 +87,7 @@
       <div class="col-md-4 mb-4">
         <div class="card" style="width: 18rem;">
           <% if book.cover_image.attached? %>
-            <%= image_tag url_for(book.cover_image), class: "card-img-top rounded-circle", style: "max-width: 150px; max-height: 150px; object-fit: cover;", alt: "Book Cover" %>
+            <%= cl_image_tag book.cover_image.key, class: "card-img-top rounded-circle", style: "max-width: 150px; max-height: 150px; object-fit: cover;", alt: "Book Cover" %>
           <% else %>
             <img src="placeholder_image_url" class="card-img-top rounded-circle" style="max-width: 150px; max-height: 150px; object-fit: cover;" alt="No Image Available">
           <% end %>
