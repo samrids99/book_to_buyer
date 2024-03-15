@@ -1,0 +1,20 @@
+<div>
+  <h2>Available Books</h2>
+  <ul>
+    <% @available_books.each do |book| %>
+      <li><%= book.title %></li> <!-- Display book information here -->
+    <% end %>
+  </ul>
+</div>
+
+<% if user_signed_in? %>
+  <!-- Display user bookings section -->
+  <div>
+    <h2>Your Bookings</h2>
+    <ul>
+      <% @user_bookings.each do |booking| %>
+        <li><%= booking.book.title %></li> <!-- Display booking information here -->
+      <% end %>
+    </ul>
+  </div>
+<% end %>

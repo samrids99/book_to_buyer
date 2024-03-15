@@ -1,2 +1,78 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body class="custom-background" id="home-body">
+  <div id="landing-content">
+    <%= image_tag('b2b logo.png', alt: 'BookToBuyer Logo', class: 'logo-img') %>
+    <p class="under-logo">Explore the collection of books and find your next story.. </p>
+  </div>
+
+  <div class="hp-buttons">
+    <%= link_to image_tag('bookl.png', class: 'normal-image'), books_path, class: 'custom-btn', id: 'view-my-books-btn' %>
+    <%= link_to image_tag('bkngl.png', class: 'normal-image'), bookings_path, class: 'custom-btn', id: 'view-my-bookings-btn' %>
+    <%= link_to image_tag('prof.png', class: 'normal-image'), new_user_session_path, class: 'custom-btn', id: 'view-my-profile-btn' %>
+  </div>
+
+  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators"></ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag('wbd.jpg', class: 'carousel-image') %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag('lib4.jpg', class: 'carousel-image') %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag('lib3.jpg', class: 'carousel-image') %>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="button-row">
+  <%= link_to books_path, class: 'button button1' do %>
+    <span>Romance</span>
+  <% end %>
+  <%= link_to books_path, class: 'button button2' do %>
+    <span>Comedy</span>
+  <% end %>
+  <%= link_to books_path, class: 'button button3' do %>
+    <span>Action</span>
+  <% end %>
+  <%= link_to books_path, class: 'button button4' do %>
+    <span>Children</span>
+  <% end %>
+  <%= link_to books_path, class: 'button button5' do %>
+    <span>Education</span>
+  <% end %>
+  <%= link_to books_path, class: 'button button6' do %>
+    <span>Language</span>
+  <% end %>
+</div>
+
+
+    <%= image_tag('trnd.png', alt: 'trend Logo', class: 'trend-img') %>
+
+  <div class="book-covers-container">
+  <div class="book-covers">
+    <% @books.each do |book| %>
+      <% if book['volumeInfo']['imageLinks'] %>
+        <%= link_to books_path, class: 'book-link' do %>
+          <%= image_tag(book['volumeInfo']['imageLinks']['thumbnail'], class: 'book-cover-image') %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+  <footer class="custom-footer">
+    <div class="inner">
+      <p>@BookToBuy 2024</p>
+    </div>
+  </footer>
+
+</body>
