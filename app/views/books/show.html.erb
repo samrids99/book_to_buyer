@@ -15,4 +15,33 @@
 </div>
  <br>
 <%= link_to "Back to Books", books_path, class: "show_links"%>
-<%= link_to "Get this Book!", new_book_booking_path(@book), class: "show_links" %>
+<%= link_to "Get this Book!", new_book_booking_path(@book), class: "show_links", id: "get-book-button" %>
+
+<div id="booking-form" style="display: none;">
+  <h1>New Booking</h1>
+  <%= simple_form_for [@book, @booking] do |f| %>
+    <%= f.input :date,
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+
+    <p><strong>Price of the Book:</strong> $<%= @book.price %></p>
+
+    <p><strong>Book Owner:</strong> <%= @book.user.username %></p>
+
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+
+    <%= f.submit "Book Now", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var getBookButton = document.getElementById("get-book-button");
+    var bookingForm = document.getElementById("booking-form");
+
+    getBookButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      bookingForm.style.display = bookingForm.style.display === "none" ? "block" : "none";
+    });
+  });
+</script>
