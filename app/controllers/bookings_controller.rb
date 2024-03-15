@@ -36,9 +36,9 @@ class BookingsController < ApplicationController
 
   def approve_booking
     #if current_user == @booking.book.user
-      @booking.status = "approved"
-      if @booking.update
-        flash[:success] = "Booking successfully approved"
+      @booking.status = "accept"
+      if @booking.update(status: @booking.status)
+        flash[:success] = "Booking successfully accepted"
       else
         flash[:error] = "Failed to approve booking"
       end
@@ -50,7 +50,7 @@ class BookingsController < ApplicationController
 
   def decline_booking
     if current_user == @booking.book.user
-      @booking.status = "declined"
+      @booking.status = "decline"
       if @booking.save
         flash[:success] = "Unfortunately, your booking is declined"
       else
