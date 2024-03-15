@@ -1,1 +1,191 @@
-// Specific CSS for your home-page
+.custom-background {
+  background-color: #989898;
+}
+
+.logo-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.under-logo {
+  font-size: 30px;
+  padding: 10px;
+  color: black;
+}
+
+.hp-title1,
+.hp-title2,
+.hp-title3 {
+  text-align: center;
+  padding: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 5px;
+}
+
+/* Book Covers */
+
+.book-covers-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  border-bottom: 30px;
+}
+
+.book-covers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-link {
+  margin: 10px;
+}
+
+.book-cover-image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.3s;
+}
+
+.book-cover-image:hover {
+  opacity: 0.5;
+}
+
+/* Carousel */
+
+.carousel-inner .item {
+  display: inline-block;
+  width: 100%;
+}
+
+.carousel-inner {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.carousel-control {
+  display: none;
+}
+
+.carousel-item img {
+  max-width: 50%;
+  max-height: auto;
+}
+
+/* Buttons */
+
+.hp-buttons {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.custom-btn {
+  margin-right: 20px;
+}
+
+.hp-buttons .custom-btn .normal-image {
+  width: 70px;
+  height: auto;
+}
+
+.custom-btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.custom-btn .normal-image {
+  width: 200px;
+  height: auto;
+  transition: opacity 0.3s;
+}
+
+.custom-btn:hover .normal-image {
+  opacity: 0.7;
+}
+
+.custom-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.custom-btn:hover::before {
+  opacity: 1;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-weight:bold ;
+  color: black;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 0 30px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* Bottom Button Colours */
+
+.button1 {
+  background-color: #cdb4db;
+}
+
+.button2 {
+  background-color: #a2d2ff;
+}
+
+.button3 {
+  background-color: #ba93df;
+}
+
+.button4 {
+  background-color: #f8aadd;
+}
+
+.button5 {
+  background-color: #fbe09b;
+}
+
+.button6 {
+  background-color: #8dadd2;
+}
+
+.carousel-item img {
+  max-width: 50%;
+  max-height: auto;
+}
+
+.trend-img {
+  max-width: 300px;
+  max-height: auto;
+  margin-top: 40px ;
+}
+
+.custom-footer p {
+  color: black;
+}

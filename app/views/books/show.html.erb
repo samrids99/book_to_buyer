@@ -1,18 +1,54 @@
 <%= stylesheet_link_tag 'book_show', media: 'all' %>
-<h1><%= @book.title %></h1>
+<h1 class="show_h1"><%= @book.title %></h1>
 
 <div class="card">
   <%= cl_image_tag @book.cover_image.key, width: 400, height: 300, crop: :fill if @book.cover_image.attached? %>
   <div class="card-body">
-    <p><strong>Title:</strong> <%= @book.title %></p>
-    <p><strong>Author:</strong> <%= @book.author %></p>
-    <p><strong>Genre:</strong> <%= @book.genre %></p>
-    <p><strong>Owner:</strong> <%= @book.user.username %></p>
-    <p><strong>What's it about?:</strong> <%= @book.description %></p>
+    <p class="show-p"><strong>Title:</strong> <%= @book.title %></p>
+    <p class="show-p"><strong>Author:</strong> <%= @book.author %></p>
+    <p class="show-p"><strong>Genre:</strong> <%= @book.genre %></p>
+    <p class="show-p"><strong>Owner:</strong> <%= @book.user.username %></p>
+    <p class="show-p"><strong>What's it about?:</strong> <%= @book.description %></p>
     <br>
     <p><strong>Price:</strong> $<%= @book.price %></p>
   </div>
 </div>
  <br>
-<%= link_to "Back to Books", books_path %>
-<%= link_to "Rent this book!", new_booking_path(book_id: @book.id) %>
+<%= link_to "Back to Books", books_path, class: "show_links"%>
+<%= link_to "Get this Book!", '#', class: "show_links", id: "get-book-button" %>
+
+<div id="booking-form" style="display: none;">
+  <h1 class="form-title">New Booking</h1>
+  <%= simple_form_for [@book, @booking], html: { class: "booking-form" } do |f| %>
+    <div class="form-group">
+      <%= f.label :date, 'Please select your pick-up' %>
+      <%= f.input :date, as: :string, input_html: { class: "form-control", data: { controller: "datepicker" } } %>
+    </div>
+
+    <div class="form-group">
+      <strong>Price of the Book:</strong> $<%= @book.price %>
+    </div>
+
+    <div class="form-group">
+      <strong>Book Owner:</strong> <%= @book.user.username %>
+    </div>
+
+    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+
+    <div class="form-group">
+      <%= f.submit "Book Now", class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var getBookButton = document.getElementById("get-book-button");
+    var bookingForm = document.getElementById("booking-form");
+
+    getBookButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      bookingForm.style.display = bookingForm.style.display === "none" ? "block" : "none";
+    });
+  });
+</script>
