@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<h1>Listing Books</h1>
-=======
-<<<<<<< HEAD
->>>>>>> 2daa6f8e67d85eb77fedebc663817324bdfb963c
 <style>
   body {
     background-color: #284b63;
@@ -75,10 +70,6 @@
   }
 
 </style>
-<<<<<<< HEAD
-
-<h1>Available Books</h1>
-=======
 <div class="container">
   <div class="row justify-content-center mt-4">
     <div class="col-md-6">
@@ -92,30 +83,6 @@
   <%= link_to "List your own book!", new_book_path %>
 </div>
   <div class="row justify-content-center mt-4">
-=======
->>>>>>> 2daa6f8e67d85eb77fedebc663817324bdfb963c
-
-<%= form_tag(books_path, method: :get) do %>
-  <%= text_field_tag(:search, params[:search], placeholder: "Search by title, author...") %>
-  <%= submit_tag("Search", class: "search-button") %>
-<% end %>
-<br>
-<%= link_to 'List your book', new_book_path, class: 'btn btn-primary' %>
-<%= link_to "View Your Bookings", bookings_path, class: 'btn btn-primary' %>
-
-<table data-controller="hello">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Genre</th>
-      <th>Description</th>
-      <th>User</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
->>>>>>> user_model
     <% @books.each do |book| %>
       <div class="col-md-4 mb-4">
         <div class="card" style="width: 18rem;">

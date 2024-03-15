@@ -16,17 +16,8 @@ class BookingsController < ApplicationController
     @book = Book.find(params[:book_id])
     @booking.user = current_user
     @booking.status = 'pending'
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-    @booking.book = @book
-=======
-    @booking.book = @book
-=======
     @booking.book = @book
 
->>>>>>> user_model
->>>>>>> 2daa6f8e67d85eb77fedebc663817324bdfb963c
     if @booking.save
       redirect_to bookings_path, notice: 'Booking was successfully created.'
     else
@@ -35,10 +26,13 @@ class BookingsController < ApplicationController
   end
 
   def index
-    if current_user == @booking&.book&.user
-      @bookings = @booking.book.bookings
-    else
-      @bookings = current_user.bookings.where(status: 'pending')
+    @users = User.all
+    @bookings = current_user.bookings
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
     end
   end
 
